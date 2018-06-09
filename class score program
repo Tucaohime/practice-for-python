@@ -1,0 +1,13 @@
+#分数为从5到0分，输入学生分数之后会显示相应的等级5分为A，4分为B，以此类推。
+def Class():
+    score=int(input("Enter your score :"))
+    
+    for i in range (0,6):
+        if i==score:
+            a=i
+            p=chr(70-a)
+            print("The score is :",p)
+
+Class()
+    
+    
