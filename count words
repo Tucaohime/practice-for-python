@@ -1,0 +1,22 @@
+def vu():
+    Qte=input("Enter the worlds:")# words 
+    
+    #分割
+    Ais=len(Qte.split())         
+    
+    
+    #计数
+    Sum=0
+    for i in range(int(Ais)):
+        
+        Sum=Sum+len((Qte.split()).pop(i))
+        
+    print("总个数为：",Ais)
+    print("总字母数量为：",Sum)
+    print("此次输入的平均单词数量为：",Sum/Ais)
+        
+''' 
+    print(Qte.split())
+    print((Qte.split()).pop(i))
+'''
+vu()
