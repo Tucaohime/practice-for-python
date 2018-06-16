@@ -1,0 +1,21 @@
+#BMI计算器（偷懒版本）
+
+def bmi(hight,weight):
+    
+    BMI=weight/(hight**2)
+    
+    return BMI
+
+def main():
+    h,w=eval(input("输入身高(单位m)，体重(单位kg)"))
+    
+    number=bmi(h,w)
+    
+    if number<19:
+        print("太轻，您的BMI指数为",number)
+    if number>25:
+        print("太重，您的BMI指数为",number)
+    else:
+        print("处于标准体重内，您的BMI指数为:",number)
+
+main()
