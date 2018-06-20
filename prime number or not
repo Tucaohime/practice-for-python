@@ -15,3 +15,40 @@ def main():
         print(n,"not prime")
 
 main()
+
+
+
+def prims(n):
+   
+    s=[]
+    ss=''
+    if n%2==0:
+    
+        for i in range(2,n):
+            if isPrime(i):
+                s.append(i)
+               
+
+        return s
+    if n%2!=0:
+        print(n,"is not a even number")
+
+        
+def main():
+    n=int(input("Enter a even number:"))
+    
+    List=prims(n)
+    
+    long=len(List)
+    
+    print(List,"为所有素数")
+    print(long,"为",n,"以内素数个数")
+    
+    for a in range (0,long):
+        for b in range(0,long):
+            if List[a]+List[b]==n:
+                print (List[a],a,"与",List[b],b,end="\n",)
+            
+
+    
+main()
