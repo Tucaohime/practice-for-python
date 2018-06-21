@@ -1,0 +1,52 @@
+#模拟游戏
+#两个骰子，骰子结果为2，3，11时输掉，结果为7，11时赢取游戏
+#进行n轮游戏之后，计算n轮游戏的玩家胜率
+
+
+
+import random
+def Huaqi(n):
+   #计数器和赋值
+    i=0
+    lose=0
+    win=0
+    wasted=0
+    wast=0
+   
+
+    while i<n:
+        roll=random.randrange(1,12)
+        
+        if (roll==2) or (roll==3) or (roll==12):
+            i=i+1
+            lose=lose+1
+            
+        if (roll==7) or (roll==11):
+            i=i+1
+            win=win+1
+        
+        if (roll==4) or (roll==5) or (roll==6):
+            wasted=wasted+1
+            
+        else:
+            wast=wast+1
+
+    print(i,"对局数量")
+    print(n,"进行轮数")
+    print(win,"赢")
+    print(lose,"输掉")
+    print(wasted,"重新开始")
+    print(wast,"测试")
+    return (win,lose,i)
+
+def main():
+    print("这是一个模拟花旗游戏的软件")
+    n=int(input("输入需要模拟的轮数"))
+    
+    a,b,i=Huaqi(n)
+    
+    print(a/(a+b),"为获胜概率")
+    print(a,b,i)
+    
+    
+main()
