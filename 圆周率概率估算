@@ -1,0 +1,16 @@
+def throw_arrow():
+    x=2*random.random()-1
+    y=2*random.random()-1
+    point=(x**2)+(y**2)
+    return point
+
+
+def main():
+    n=int(input("输入投掷飞镖次数"))
+    h=0
+    for i in range(n):
+        if (throw_arrow())<=1:
+            h=h+1
+    pi=4*(h/n)
+    print("击中次数为{0}，投掷次数为{1}，求的圆周率近似值为{2}".format(h,n,pi))
+main()
