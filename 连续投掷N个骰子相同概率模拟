@@ -1,0 +1,26 @@
+import random
+def toe():
+    toe_n=random.randrange(0,7)
+    return toe_n
+        
+def judgement(num):
+    toes=toe()
+    for i in range(0,num):
+        if toes==toe():
+            return True
+        if toes!=toe():
+            return False
+
+        
+def main():
+    n=int(input("输入投掷次数"))
+    num=int(input("有几个骰子？"))
+    h=0
+    for i in range(n):
+        if judgement(num):
+            h=h+1
+   
+    print(h/n*100,"%相同概率")
+    
+main()
+        
