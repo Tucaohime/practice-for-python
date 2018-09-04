@@ -1,0 +1,26 @@
+import math
+def mysqrt(a):
+    '''
+    牛顿迭代法获取参数a的平方根，返回y
+    '''
+    x=1
+    while True:
+        y=(x+a/x)/2
+        if abs(x-y)<=0.01:
+            return y
+            break
+        x=y
+def table(n):
+    '''
+    打印表格，分别对照参数从0到n的平方根，牛顿迭代法求出的平方根mysqrt，python自带math模块求出的平方根，以及迭代法与math模块两者的差
+    '''
+    print("a{0:^18}{1:^18}{2:^18}".format("mysqrt","math.sqrt","diff")) #打印表格头部
+    print("-"*50)                                                       #打印分割线
+   
+    for i in range(0,n+1):                                              #循环求根     
+        a=mysqrt(i)
+        b=math.sqrt(i)
+        c=abs(a-b)
+        print("{0:<8}{1:<17}{2:<20}{3:<10}".format(str(i),str(a)[0:5],str(b)[0:5],str(c)[0:5]))
+        
+table(5)
